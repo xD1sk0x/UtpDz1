@@ -12,7 +12,7 @@ int findMax(const std::vector<int>& numbers) {
     // Нахождение максимума
     int max = numbers[0];
     for (size_t i = 1; i < numbers.size(); ++i) {
-        if (numbers[i] > max) {
+        if (numbers[i] < max) {
             max = numbers[i];
         }
     }
@@ -41,7 +41,7 @@ int main() {
         int maximum = findMax(numbers);
 
         // Вывод результата
-        std::cout << "Максимум: " << maximum << std::endl;
+        std::cout << "Минимум: " << maximum << std::endl;
     }
     catch (const std::invalid_argument& e) {
         // Обработка исключения при пустом векторе
