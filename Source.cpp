@@ -21,10 +21,23 @@ int findMax(const std::vector<int>& numbers) {
 }
 
 int main() {
-    setlocale(LC_ALL, "rus");
     try {
-        // Пример использования
-        std::vector<int> numbers = { 5, 2, 9, 1, 7 };
+        // Ввод количества чисел
+        std::cout << "Введите количество чисел: ";
+        size_t count;
+        std::cin >> count;
+
+        // Ввод самих чисел
+        std::vector<int> numbers;
+        numbers.reserve(count); // Резервируем память заранее
+        std::cout << "Введите числа через пробел: ";
+        for (size_t i = 0; i < count; ++i) {
+            int num;
+            std::cin >> num;
+            numbers.push_back(num);
+        }
+
+        // Вызов функции для нахождения максимума
         int maximum = findMax(numbers);
 
         // Вывод результата
